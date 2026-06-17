@@ -11,9 +11,9 @@
 
 body {
 
-    background-image: linear-gradient(#01022d, #000);
-
     min-height: 100vh;
+
+    background: linear-gradient(#01022d, #000);
 
     display: flex;
 
@@ -30,40 +30,60 @@ body {
 
 .container {
 
-    width: 90%;
+    width: 100%;
 
     max-width: 1200px;
 
-    min-height: 640px;
+    min-height: 650px;
 
-    background-image:
-    linear-gradient(to right, #01022de5, #00000088),
+    padding: 30px;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+
+    background:
+
+    linear-gradient(
+        to right,
+        rgba(1,2,45,.9),
+        rgba(0,0,0,.5)
+    ),
+
     url(download.png);
+
 
     background-size: cover;
 
     background-position: center;
 
-    background-repeat: no-repeat;
-
-    border-radius: 10px;
-
-    padding: 20px;
+    transition: .5s;
 
 }
 
 
+
 .container:hover {
 
-    background-image:
-    linear-gradient(to right, #01022de5, transparent),
+    background:
+
+    linear-gradient(
+        to right,
+        rgba(1,2,45,.7),
+        transparent
+    ),
+
     url(download.png);
+
+    background-size: cover;
 
 }
 
 
 
 /* ===== Header ===== */
+
 
 header {
 
@@ -80,36 +100,45 @@ header {
 
     color: white;
 
-    font-size: clamp(25px, 5vw, 40px);
+    text-decoration: none;
+
+    font-size: clamp(28px,5vw,45px);
 
     text-transform: uppercase;
+
+    font-weight: bold;
 
 }
 
 
-header ul {
+
+ul {
 
     list-style: none;
 
     display: flex;
 
-    gap: 20px;
+    gap: 25px;
 
 }
 
 
-header a {
+ul a {
 
     color: white;
 
     text-decoration: none;
 
+    font-size: 18px;
+
+    transition: .3s;
+
 }
 
 
-header ul a:hover {
+ul a:hover {
 
-    text-decoration: underline;
+    color: #00aaff;
 
 }
 
@@ -117,65 +146,72 @@ header ul a:hover {
 
 /* ===== Content ===== */
 
+
 .content {
 
     color: white;
 
+    margin-top: 120px;
+
     max-width: 600px;
 
-    margin-top: 100px;
-
 }
+
 
 
 .content h2 {
 
-    font-size: clamp(30px, 6vw, 50px);
+    font-size: clamp(35px,6vw,60px);
 
-    font-weight: 300;
+    text-transform: uppercase;
 
 }
+
 
 
 .content p {
 
-    max-width: 450px;
-
     margin-top: 20px;
+
+    max-width: 500px;
 
     line-height: 1.8;
 
-    letter-spacing: 1px;
+    color: #ddd;
+
+    font-size: 18px;
 
 }
 
 
-.content button {
 
-    margin-top: 25px;
+button {
 
-    padding: 12px 35px;
+    margin-top: 30px;
+
+    padding: 14px 45px;
+
+    border: none;
 
     border-radius: 10px;
 
-    border: 2px solid transparent;
-
     cursor: pointer;
 
-    font-size: 16px;
+    font-size: 17px;
 
     transition: .3s;
 
 }
 
 
-.content button:hover {
+
+button:hover {
 
     background: transparent;
 
     color: white;
 
-    border-color: white;
+    border: 2px solid white;
 
 }
 
@@ -183,14 +219,22 @@ header ul a:hover {
 
 /* ===== Tablet ===== */
 
+
 @media(max-width:768px){
+
+
+    body {
+
+        padding: 10px;
+
+    }
 
 
     .container {
 
-        width: 100%;
+        min-height: 700px;
 
-        min-height: 600px;
+        padding: 20px;
 
     }
 
@@ -199,23 +243,25 @@ header ul a:hover {
 
         flex-direction: column;
 
-        gap: 25px;
+        gap: 30px;
 
     }
 
 
-    header ul {
+    ul {
 
         flex-wrap: wrap;
 
         justify-content: center;
+
+        gap: 15px;
 
     }
 
 
     .content {
 
-        margin-top: 70px;
+        margin-top: 80px;
 
         text-align: center;
 
@@ -228,12 +274,9 @@ header ul a:hover {
 
     .content p {
 
-        margin-left: auto;
-
-        margin-right: auto;
+        margin: 20px auto;
 
     }
-
 
 }
 
@@ -241,51 +284,43 @@ header ul a:hover {
 
 /* ===== Mobile ===== */
 
+
 @media(max-width:480px){
-
-
-    body {
-
-        padding: 10px;
-
-    }
 
 
     .container {
 
-        padding: 15px;
+        min-height: 750px;
 
     }
 
 
-    .content {
+    ul {
 
-        margin-top: 50px;
+        flex-direction: column;
+
+        text-align: center;
+
+    }
+
+
+    .content h2 {
+
+        font-size: 40px;
 
     }
 
 
     .content p {
 
-        font-size: 14px;
+        font-size: 15px;
 
     }
 
 
-    .content button {
+    button {
 
         width: 100%;
-
-    }
-
-
-    header ul {
-
-        flex-direction: column;
-
-        align-items: center;
-
-        gap: 15px;
 
     }
 
