@@ -1,80 +1,292 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
 
 * {
-    font-family: 'Ubuntu', sans-serif;
-    padding: 0;
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
 }
+
 
 body {
+
     background-image: linear-gradient(#01022d, #000);
-    height: 100vh;
-    width: 100%;
+
+    min-height: 100vh;
+
     display: flex;
+
     justify-content: center;
+
     align-items: center;
-}
-a{
-    color: white;
-    text-decoration: none;
-    margin: 30px;
-    padding: 0 30px;
-}
-.container {
-    background-image: linear-gradient(to right, #01022de5, #00000088), url(download.png);
-    width: 90%;
-    height: 640px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+
+    padding: 20px;
+
 }
 
-.container:hover {
-    background-image: linear-gradient(to right, #01022de5 , transparent),
-        url(download.png);
-}
-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-header .logo{
-    font-size: 40px;
-    text-transform: uppercase;
-}
-header ul{
-    list-style-type: none;
-    display: flex;
-}
-header ul a:hover{
-    text-decoration: underline;
-}
-.container .content{
-    color: white;
-    width: 80%;
-    height: 80%;
-    margin-top: 10%;
-    margin-left: 30px;
-}
-.container .content h2{
-    font-size: 50px;
-    font-weight: 100;
-}
-.container .content p{
-    width: 400px;
-    padding-right: 30px;
-    letter-spacing: 2px;
-    line-height: 20px;
-}
-.container .content button{
-    width: 10%;
-    padding: 5px;
+
+/* ===== Container ===== */
+
+.container {
+
+    width: 90%;
+
+    max-width: 1200px;
+
+    min-height: 640px;
+
+    background-image:
+    linear-gradient(to right, #01022de5, #00000088),
+    url(download.png);
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
     border-radius: 10px;
-    border-color: transparent;
+
+    padding: 20px;
+
 }
-.container .content button:hover{
-    background-color: transparent;
-    cursor: pointer;
+
+
+.container:hover {
+
+    background-image:
+    linear-gradient(to right, #01022de5, transparent),
+    url(download.png);
+
+}
+
+
+
+/* ===== Header ===== */
+
+header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+.logo {
+
     color: white;
+
+    font-size: clamp(25px, 5vw, 40px);
+
+    text-transform: uppercase;
+
+}
+
+
+header ul {
+
+    list-style: none;
+
+    display: flex;
+
+    gap: 20px;
+
+}
+
+
+header a {
+
+    color: white;
+
+    text-decoration: none;
+
+}
+
+
+header ul a:hover {
+
+    text-decoration: underline;
+
+}
+
+
+
+/* ===== Content ===== */
+
+.content {
+
+    color: white;
+
+    max-width: 600px;
+
+    margin-top: 100px;
+
+}
+
+
+.content h2 {
+
+    font-size: clamp(30px, 6vw, 50px);
+
+    font-weight: 300;
+
+}
+
+
+.content p {
+
+    max-width: 450px;
+
+    margin-top: 20px;
+
+    line-height: 1.8;
+
+    letter-spacing: 1px;
+
+}
+
+
+.content button {
+
+    margin-top: 25px;
+
+    padding: 12px 35px;
+
+    border-radius: 10px;
+
+    border: 2px solid transparent;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    transition: .3s;
+
+}
+
+
+.content button:hover {
+
+    background: transparent;
+
+    color: white;
+
     border-color: white;
+
+}
+
+
+
+/* ===== Tablet ===== */
+
+@media(max-width:768px){
+
+
+    .container {
+
+        width: 100%;
+
+        min-height: 600px;
+
+    }
+
+
+    header {
+
+        flex-direction: column;
+
+        gap: 25px;
+
+    }
+
+
+    header ul {
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+    }
+
+
+    .content {
+
+        margin-top: 70px;
+
+        text-align: center;
+
+        margin-left: auto;
+
+        margin-right: auto;
+
+    }
+
+
+    .content p {
+
+        margin-left: auto;
+
+        margin-right: auto;
+
+    }
+
+
+}
+
+
+
+/* ===== Mobile ===== */
+
+@media(max-width:480px){
+
+
+    body {
+
+        padding: 10px;
+
+    }
+
+
+    .container {
+
+        padding: 15px;
+
+    }
+
+
+    .content {
+
+        margin-top: 50px;
+
+    }
+
+
+    .content p {
+
+        font-size: 14px;
+
+    }
+
+
+    .content button {
+
+        width: 100%;
+
+    }
+
+
+    header ul {
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 15px;
+
+    }
+
 }
